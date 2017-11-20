@@ -46,16 +46,17 @@ const checkForNewQuestionsMain = () => {
     .then(questions => {
       console.log("questions:", questions);
 
-      // stubbing in a question for testing, so we don't have to spam Glitch with questions all the time
-      var questions = [
-        {
-          userId: 182309,
-          projectId: "df8b019a-a842-45b4-808c-78dc8ee3b239",
-          details:
-            '{"questionId":"d0JO1tf67Y18TB6v","projectId":"df8b019a-a842-45b4-808c-78dc8ee3b239","domain":"wistia-player-api-starter","path":"public/player-api-things.js","line":0,"character":1,"question":"test question, don\'t mind me","tags":["js"],"userTabId":"3642","userId":182309,"userLogin":"mrdavidjcole","userAvatar":"https://avatars0.githubusercontent.com/u/752729?v=4","userColor":"#f9ffa5","created":"2017-11-20T03:25:49.777Z","version":2}',
-          updatedAt: "2017-11-20T03:26:29.955Z"
-        }
-      ];
+      // Uncomment the next few lines to stub in a question for testing, so you don't have to post a live question on Glitch.
+      // Just be wary that their API might've changed (it's not publicly documented yet, and updates are pretty frequent)
+      // var questions = [
+      //   {
+      //     userId: 182309,
+      //     projectId: "df8b019a-a842-45b4-808c-78dc8ee3b239",
+      //     details:
+      //       '{"questionId":"d0JO1tf67Y18TB6v","projectId":"df8b019a-a842-45b4-808c-78dc8ee3b239","domain":"wistia-player-api-starter","path":"public/player-api-things.js","line":0,"character":1,"question":"test question, don\'t mind me","tags":["js"],"userTabId":"3642","userId":182309,"userLogin":"mrdavidjcole","userAvatar":"https://avatars0.githubusercontent.com/u/752729?v=4","userColor":"#f9ffa5","created":"2017-11-20T03:25:49.777Z","version":2}',
+      //     updatedAt: "2017-11-20T03:26:29.955Z"
+      //   }
+      // ];
 
       questions.forEach(question => {
         var details = JSON.parse(question.details);
